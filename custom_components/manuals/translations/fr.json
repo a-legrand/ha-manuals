@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Notices",
+        "description": "Ajoute un panneau pour ranger, consulter et rechercher les notices de vos appareils."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Notices est déjà configuré."
+    }
+  }
+}

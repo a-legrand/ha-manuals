@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Manuals",
+        "description": "Add a sidebar panel to store, browse and search your appliance manuals."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Manuals is already configured."
+    }
+  }
+}

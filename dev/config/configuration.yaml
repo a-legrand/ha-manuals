@@ -1,0 +1,12 @@
+default_config:
+
+# Demo devices (climate, lights, sensors…) to test linking manuals to devices.
+demo:
+
+logger:
+  default: warning
+  logs:
+    custom_components.manuals: debug
+
+# Dev-only fake devices (4 identical radiators, a dryer, a boiler…), see dev/fake_appliances.
+fake_appliances:

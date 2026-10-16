@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+.ruff_cache/
+.pytest_cache/
+.coverage
+node_modules/
+
+# Test HA instance: only the configuration file is versioned.
+dev/config/*
+!dev/config/configuration.yaml

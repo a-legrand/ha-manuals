@@ -1,0 +1,20 @@
+# Test Home Assistant instance with the integration mounted live.
+#   docker compose -f dev/docker-compose.yml up -d   → http://localhost:8123
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: ha-manuals-dev
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./config:/config
+      - ../custom_components/manuals:/config/custom_components/manuals
+      # File by file: HACS validation wants a single manifest.json in the
+      # repository, so this one is stored as manifest.dev.json.
+      - ./fake_appliances/__init__.py:/config/custom_components/fake_appliances/__init__.py
+      - ./fake_appliances/config_flow.py:/config/custom_components/fake_appliances/config_flow.py
+      - ./fake_appliances/sensor.py:/config/custom_components/fake_appliances/sensor.py
+      - ./fake_appliances/manifest.dev.json:/config/custom_components/fake_appliances/manifest.json
+    environment:
+      TZ: Europe/Paris
+    restart: unless-stopped

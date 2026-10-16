@@ -1,0 +1,29 @@
+[project]
+name = "ha-manuals"
+version = "0.1.0"
+requires-python = ">=3.14"
+license = "MIT"
+
+[dependency-groups]
+dev = [
+    "home-assistant-frontend",
+    "pytest-homeassistant-custom-component",
+    "ruff",
+]
+
+[tool.ruff]
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+combine-as-imports = true
+known-first-party = ["homeassistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
